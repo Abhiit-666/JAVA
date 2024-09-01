@@ -1,0 +1,51 @@
+To develop a custom `HashMap` in Java that handles collisions using separate chaining with linked lists, supports generics, resizing, and the essential operations (`put`, `get`, `remove`), you'll need to understand several key concepts:
+
+### 1. **Generics in Java**
+   - **Generics** allow you to create classes, interfaces, and methods with type parameters, enabling type safety and reusability. In your `HashMap` implementation, you'll want to support any type of keys and values, which means your class should look something like `class CustomHashMap<K, V>` where `K` is the key type and `V` is the value type.
+
+### 2. **Hashing**
+   - **Hashing** is the process of converting an object into an integer, which will then be used to determine the index in the underlying array where the key-value pair should be stored. In Java, every object has a `hashCode()` method that returns an integer. You will use this to determine the index by applying the modulus operator with the array's size.
+
+### 3. **Handling Collisions**
+   - **Separate Chaining**: When two keys produce the same hash index (a collision), you'll store them in a linked list at that index. The linked list will hold nodes that store key-value pairs. 
+   - **Linked List Implementation**: You'll need to understand how to implement or use a linked list to store these key-value pairs in the event of a collision.
+
+### 4. **Array-based Storage**
+   - Your `HashMap` will be backed by an array (let's call it `table`) where each element in the array points to a linked list (or is `null` if no elements hash to that index). The size of this array is typically a power of two to optimize indexing.
+
+### 5. **Load Factor and Resizing**
+   - **Load Factor**: This is the ratio of the number of elements in the `HashMap` to the array size. A typical default load factor is 0.75.
+   - **Resizing**: When the load factor exceeds a certain threshold, the array should be resized (typically doubled) to maintain performance. During resizing, you must rehash all existing entries into the new array since their indices will likely change due to the change in the array size.
+
+### 6. **Key Methods**
+   - **`put(K key, V value)`**: This method will calculate the hash for the key, find the correct index, and either add the key-value pair (if it doesn't exist) or update the value (if it does). If a collision occurs, it should add the key-value pair to the linked list at that index.
+   - **`get(K key)`**: This method will retrieve the value associated with the given key by hashing the key, finding the correct index, and searching the linked list (if necessary) at that index.
+   - **`remove(K key)`**: This method will remove the key-value pair by finding the correct index, then either removing the node from the linked list at that index or setting the index to `null` if it was the only element.
+
+### 7. **Node Class**
+   - You'll need a nested `Node` class (often a private static inner class) within your `CustomHashMap` class. This class will represent each element in the linked list, containing the key, value, and a reference to the next `Node`.
+
+### 8. **Hash Function**
+   - The hash function is crucial to distribute keys uniformly across the array to minimize collisions. You can use Java's `hashCode()` method, but you'll need to further process it (often using a bitwise AND with the array length minus one) to ensure the hash falls within the array bounds.
+
+### 9. **Null Handling**
+   - Decide how your `HashMap` will handle `null` keys and values. Java's `HashMap` allows one `null` key and any number of `null` values, so you might want to follow this behavior.
+
+### 10. **Edge Cases**
+   - Consider cases like:
+     - Inserting a key-value pair with a `null` key.
+     - Resizing the map when it grows beyond its load factor.
+     - Removing a key that doesn’t exist in the map.
+     - Handling multiple collisions at the same index.
+
+### 11. **Time Complexity Considerations**
+   - Understand the time complexity for your operations:
+     - `put`: O(1) average, O(n) worst-case when resizing or handling a large number of collisions.
+     - `get`: O(1) average, O(n) worst-case when dealing with many collisions.
+     - `remove`: O(1) average, O(n) worst-case when dealing with many collisions.
+
+### Additional Considerations:
+   - **Synchronization**: If you intend to make the `HashMap` thread-safe, you'll need to consider synchronization mechanisms.
+   - **Iteration**: Consider how you might iterate over the key-value pairs in the `HashMap`. This could involve iterating over each linked list in the array.
+
+Understanding these concepts will equip you with the knowledge necessary to implement a fully functional and efficient custom `HashMap` in Java.

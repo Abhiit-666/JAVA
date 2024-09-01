@@ -1,0 +1,121 @@
+### 1. **Custom HashMap Implementation with Collision Handling**
+   - Implement a custom `HashMap` from scratch that supports generics. Handle hash collisions using separate chaining with linked lists. Also, implement resizing when the load factor exceeds a certain threshold, and ensure it supports `put`, `get`, and `remove` operations.
+
+### 2. **LRU Cache Using LinkedHashMap**
+   - Create an LRU (Least Recently Used) cache with a fixed capacity using `LinkedHashMap`. When the cache exceeds the capacity, the least recently used item should be removed. Implement a `get` method that retrieves items from the cache and a `put` method that adds or updates items.
+
+### 3. **Binary Tree Serialization and Deserialization**
+   - Implement a method to serialize a binary tree to a string using pre-order traversal and a method to deserialize the string back to the original binary tree. Handle edge cases such as null nodes and skewed trees.
+
+### 4. **Producer-Consumer Problem with Custom BlockingQueue**
+   - Design a thread-safe `BlockingQueue` using an array-based circular buffer. Implement methods for `put` and `take` with appropriate blocking behavior. Demonstrate its usage with multiple producer and consumer threads that process tasks concurrently.
+
+### 5. **Graph Traversals with Shortest Path Detection**
+   - Implement Depth-First Search (DFS) and Breadth-First Search (BFS) for an undirected, weighted graph. Extend the BFS algorithm to find the shortest path between two nodes, and print the path along with its total weight.
+
+### 6. **Parallel Merge Sort Implementation**
+   - Implement the merge sort algorithm using multithreading. Divide the array into segments, sort each segment in a separate thread, and then merge the sorted segments. Ensure proper thread synchronization to avoid race conditions.
+
+### 7. **Custom Thread Pool with Task Scheduling**
+   - Implement a custom thread pool that manages a fixed number of worker threads. The thread pool should allow tasks to be submitted and executed asynchronously. Include a mechanism to shut down the pool gracefully, ensuring all tasks are completed.
+
+### 8. **Simple File System Simulation**
+   - Design a file system simulation that supports creating files and directories, deleting them, moving files between directories, and listing directory contents. Implement a command-line interface to interact with the file system.
+
+### 9. **Priority Queue with Custom Comparator for Task Scheduling**
+   - Implement a priority queue using a binary heap that accepts a custom comparator. Use it to schedule tasks based on their priority, where tasks with higher priority are executed first. Ensure the queue supports dynamic updates to task priorities.
+
+### 10. **Word Frequency Counter with Parallel Stream Processing**
+   - Develop a program that reads a large text file and counts the frequency of each word using Java Streams. Utilize parallel streams to improve performance on multi-core processors. Handle punctuation and case sensitivity appropriately.
+
+### 11. **Multi-Client Chat Application Using Non-Blocking I/O**
+   - Build a multi-client chat application where each client can send and receive messages in real-time. Use Java's non-blocking I/O (NIO) with `Selector` and `SocketChannel` to handle multiple clients concurrently without blocking the main thread.
+
+### 12. **Thread Pool Implementation with Scheduled Tasks**
+   - Extend your custom thread pool to support scheduling tasks to run after a delay or periodically. Implement methods like `schedule(Runnable task, long delay)` and `scheduleAtFixedRate(Runnable task, long initialDelay, long period)`.
+
+### 13. **Huffman Coding for Text Compression**
+   - Implement Huffman coding to compress a given text file. Create a binary tree based on character frequencies, encode the file using this tree, and write the compressed data to a new file. Also, implement the decompression method to restore the original text.
+
+### 14. **Binary Search Tree with Range Query**
+   - Implement a Binary Search Tree (BST) that supports standard operations like insertion, deletion, and search. Add a method to find all elements within a given range [low, high] in O(log n + m) time, where m is the number of elements in the range.
+
+### 15. **Log File Parser with Pattern Matching**
+   - Write a program that parses a log file and extracts specific information such as error messages, timestamps, and user IDs using regular expressions. Store the extracted data in a structured format, such as a CSV file or a database.
+
+### 16. **Observer Pattern for Stock Price Updates**
+   - Implement the Observer design pattern to simulate a stock price monitoring system. Create a `Stock` class that notifies multiple observers (e.g., email alerts, SMS alerts) whenever the price changes. Implement methods to add, remove, and notify observers.
+
+### 17. **Generic Linked List with Custom Iterator**
+   - Implement a generic singly linked list that supports basic operations like insertion, deletion, and reversal. Additionally, create a custom iterator for the list that allows forward and backward traversal, and supports removing elements during iteration.
+
+### 18. **Parallel Stream for Matrix Multiplication**
+   - Implement matrix multiplication using Java Streams. Use parallel streams to perform the multiplication of large matrices, leveraging multi-core processors for improved performance. Ensure proper handling of edge cases like non-conformable matrices.
+
+### 19. **Immutable AVL Tree Implementation**
+   - Create an immutable version of an AVL tree, a self-balancing binary search tree. Ensure that all operations (insertion, deletion, search) return a new tree with the modifications, leaving the original tree unchanged.
+
+### 20. **Circular Buffer with Dynamic Resizing**
+   - Implement a circular buffer that supports enqueueing and dequeueing operations. Extend the buffer to dynamically resize when it becomes full, doubling its capacity while maintaining the order of elements.
+
+### 21. **Infix Expression Evaluator Using Shunting Yard Algorithm**
+   - Implement an infix expression evaluator that converts an infix expression to postfix using the Shunting Yard algorithm, and then evaluates the postfix expression. Handle operators, parentheses, and precedence rules.
+
+### 22. **Event-Driven Bank Teller Simulation**
+   - Simulate a bank teller system where customers arrive at random intervals. Use a priority queue to manage events, such as customer arrivals and teller availability. Measure and print metrics like average wait time and queue length.
+
+### 23. **JDBC-Based Library Management System**
+   - Develop a library management system using JDBC to connect to a relational database. Implement CRUD operations for books, members, and loans. Include features like searching for books by title/author and tracking borrowed books.
+
+### 24. **Custom JSON Serializer and Deserializer with Annotations**
+   - Implement a custom JSON serializer and deserializer for Java objects. Use annotations to specify which fields should be serialized and their JSON keys. Handle nested objects, arrays, and edge cases like circular references.
+
+### 25. **Multithreaded Directory File Search**
+   - Write a program that searches for files matching a given pattern across a directory and its subdirectories. Use multiple threads to parallelize the search, ensuring that results are collected and displayed in real-time.
+
+### 26. **Asynchronous REST API Client Using CompletableFuture**
+   - Develop a REST API client that makes asynchronous requests to multiple endpoints using `CompletableFuture`. Aggregate the results from all endpoints and handle errors gracefully. Implement timeouts and retries for failed requests.
+
+### 27. **Dynamic Programming: Longest Palindromic Subsequence**
+   - Implement a solution to find the longest palindromic subsequence in a given string using dynamic programming. Optimize the solution to use O(n^2) time and O(n) space by reducing redundant calculations.
+
+### 28. **Dijkstra's and Bellman-Ford Algorithms for Shortest Path**
+   - Implement both Dijkstra's and Bellman-Ford algorithms to find the shortest path from a source node to all other nodes in a weighted graph. Use Dijkstra's for non-negative weights and Bellman-Ford to handle graphs with negative weights, detecting negative cycles.
+
+### 29. **Custom ClassLoader for Plugin Architecture**
+   - Implement a custom `ClassLoader` that loads classes from a specified directory at runtime. Use this loader to create a plugin architecture where new plugins (classes) can be added without restarting the application.
+
+### 30. **To-Do List Application with JavaFX and SQLite**
+   - Build a to-do list application with a graphical user interface using JavaFX. Store tasks in an SQLite database, allowing users to add, edit, delete, and mark tasks as completed. Implement features like sorting and filtering tasks.
+
+### 31. **Thread-Safe Bounded Cache with Expiry**
+   - Implement a thread-safe cache that stores key-value pairs with a fixed maximum size. When the cache reaches its capacity, the oldest entry should be removed. Additionally, implement an expiry mechanism where entries are automatically removed after a certain time period.
+
+### 32. **Custom Annotation Processor for Code Generation**
+   - Create a custom annotation processor that generates boilerplate code at compile-time. For example, implement an annotation `@Builder` that generates a builder class for any annotated class, supporting method chaining.
+
+### 33. **Deadlock Detection and Resolution in Multithreaded Program**
+   - Write a multithreaded program that intentionally creates a deadlock situation. Then, implement a mechanism to detect the deadlock and resolve it, either by breaking the deadlock or by aborting one of the threads involved.
+
+### 34. **Synchronized Bounded Buffer with Condition Variables**
+   - Implement a bounded buffer that allows multiple producers and consumers to operate concurrently. Use condition variables (i.e., `wait` and `notifyAll`) to ensure producers wait when the buffer is full, and consumers wait when it is empty.
+
+### 35.
+
+ **Recursive Descent Parser for Arithmetic Expressions**
+   - Build a recursive descent parser that evaluates arithmetic expressions with operators like +, -, *, /, and parentheses. Ensure the parser correctly handles operator precedence and associativity.
+
+### 36. **Custom CompletableFuture with Dependency Management**
+   - Implement a custom version of `CompletableFuture` that supports chaining multiple asynchronous tasks with dependencies. Implement methods like `thenApply`, `thenAccept`, and `exceptionally` to handle task completion, transformation, and error handling.
+
+### 37. **Data Processing Pipeline with Java Streams**
+   - Design a data processing pipeline that processes a large dataset (e.g., a CSV file). Use Java Streams to filter, transform, and aggregate the data, and demonstrate the use of parallel streams to speed up processing.
+
+### 38. **Design a RESTful Web Service with Spring Boot**
+   - Implement a RESTful web service using Spring Boot that exposes CRUD operations for managing user profiles. Secure the API with JWT authentication and implement rate limiting to prevent abuse.
+
+### 39. **Design a Generic Cache with Soft References**
+   - Implement a generic cache that stores objects using `SoftReference` to allow the garbage collector to reclaim memory when needed. The cache should provide methods to add, retrieve, and remove items, and automatically remove entries when memory is low.
+
+### 40. **Blockchain Simulation**
+   - Create a simplified blockchain simulation where each block contains a list of transactions and a cryptographic hash of the previous block. Implement proof-of-work and chain validation mechanisms to ensure the integrity of the blockchain.

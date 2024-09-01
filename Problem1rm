@@ -1,0 +1,43 @@
+Here’s the list of problems sorted in the order you should learn them, from the simplest to the most complex:
+
+### 1. **Understand Java’s `hashCode()` Method**
+   - **Difficulty**: Easy
+   - **Reason**: This is foundational and easy to understand, providing insights into how objects in Java generate hash codes.
+
+### 2. **Understand Java’s `equals()` Method**
+   - **Difficulty**: Easy
+   - **Reason**: Learning how to override and use `equals()` is fundamental before diving into key comparisons in a `HashMap`.
+
+### 3. **Implement a Basic Linked List**
+   - **Difficulty**: Easy to Moderate
+   - **Reason**: Learning how linked lists work is essential for handling collisions later on. This introduces basic data structure concepts.
+
+### 4. **Simple Hash Function Implementation**
+   - **Difficulty**: Easy to Moderate
+   - **Reason**: Implementing a basic hash function introduces the concept of mapping keys to indices in an array, setting the stage for more complex hashing logic.
+
+### 5. **Implement a Basic Key-Value Store**
+   - **Difficulty**: Moderate
+   - **Reason**: This builds on your understanding of arrays and linked lists by introducing key-value pairs, without worrying about resizing or load factors yet.
+
+### 6. **Collision Handling with Linked Lists**
+   - **Difficulty**: Moderate
+   - **Reason**: This directly applies your linked list knowledge to handle hash collisions, a critical concept in building a `HashMap`.
+
+### 7. **Basic Array Resizing**
+   - **Difficulty**: Moderate
+   - **Reason**: Implementing dynamic resizing of arrays introduces the concept of managing capacity, which is crucial for handling load factors in a `HashMap`.
+
+### 8. **Linked List-Based Set**
+   - **Difficulty**: Moderate
+   - **Reason**: This problem builds on linked lists but adds complexity by enforcing uniqueness, similar to how keys in a `HashMap` must be unique.
+
+### 9. **Implement Load Factor Calculation**
+   - **Difficulty**: Moderate to Difficult
+   - **Reason**: This involves calculating when to resize based on the load factor, adding a layer of complexity to your basic key-value store.
+
+### 10. **Implement a Simple Resizable Array**
+   - **Difficulty**: Difficult
+   - **Reason**: Managing dynamic resizing while allowing for element removal and shrinking is complex, but it ties together many concepts required for building a robust `HashMap`.
+
+By following this sequence, you will build up your knowledge gradually, ensuring that you understand each concept thoroughly before moving on to the next, more complex topic.
