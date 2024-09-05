@@ -169,8 +169,24 @@ public class LLGeneric<T extends Comparable<T>> {
         return result;
     }
 
+    public void reverse(){
 
+        if (this.head ==null || this.head.next==null)return;
 
+        this.head=revImpl(this.head);
+    }
 
+    private Node revImpl(Node head){
+        Node prev=null;
+        Node current=head;
+
+        while(current!=null){
+            Node temp=current.next;
+            current.next=prev;
+            prev=current;
+            current=temp;
+        }
+        return prev;
+    }
     
 }
