@@ -1,8 +1,10 @@
 package Equals;
 
+import javax.rmi.ssl.SslRMIClientSocketFactory;
+
 import org.w3c.dom.Node;
 
-public class LL {
+public class LLint {
     private Node head;
     private int size;
 
@@ -17,7 +19,7 @@ public class LL {
         
     }
 
-    LL(){
+    LLint(){
         this.head=null;
         this.size=0;
     }
@@ -26,24 +28,24 @@ public class LL {
     public void add(int data,int pos){
         //addition at the beginning
         Node N = new Node(data, null);
-        if(head== null){
+        if(pos == 0 && head== null){
             head=N;
-            size++;
+            ++size;
+            return;
         }
         
         //at the end
         if(pos==size){
-
+            
             Node current=head;
             while(current.next!=null){
                 current=current.next;
             }
             current.next=N;
             size++;
-        }
-
-        // at position other than the end
-        else{
+        }// at position other than the end
+        else if (pos != size){
+            
             Node current=head;
             for(int i=0;i<pos-1;i++){
                 current=current.next;
@@ -123,10 +125,11 @@ public class LL {
         while(current!=null)
         {   
             sb.append(current.data);
+            // System.out.println(sb.toString());
             if(current.next != null){
                sb.append(",");
             }
-           
+           current=current.next;
         }
 
         System.out.println(sb.toString());
@@ -141,11 +144,11 @@ public class LL {
 
     //merge sorting the list
     public void sort(){
-        if(head==null){
+        if(this.head==null){
             return;
         }
 
-        mergeSort(head);
+        this.head=mergeSort(this.head);
     }
 
 
@@ -162,7 +165,8 @@ public class LL {
 
 
     public Node mergeSort(Node head){
-        Node mid= findMid(head);
+        if(head.next==null)return head;
+        Node mid = findMid (head);
         Node next2mid=mid.next;
 
         mid.next=null;
