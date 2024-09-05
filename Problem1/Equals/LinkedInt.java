@@ -10,7 +10,8 @@ public class LinkedInt {
         l1.print();
         l1.sort();
         l1.print();
-
+        l1.reverse();
+        l1.print();
         
         System.out.println("Size :" + l1.size());
     }

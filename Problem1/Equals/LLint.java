@@ -191,5 +191,23 @@ public class LLint {
 
         return result;
     }
+    public Node revImpl(Node head){
+        Node prev=null;
+        Node current= head;
+        while(current!=null){
+            Node temp=current.next;
+            current.next=prev;
+            prev=current;
+            current=temp;
+        }
+        return prev;
 
+    }
+
+    public void reverse(){
+        if(this.head==null|| this.head.next== null)return;
+
+        this.head=revImpl(this.head);
+
+    }
 }
